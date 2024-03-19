@@ -35,6 +35,8 @@
     listContainer.appendChild(li);
     listContainer.style.backgroundColor = "rgb(178, 190, 181)"
     document.getElementById("placeholder1").value = "";
+    count++;
+    document.getElementById("count").innerHTML= "number of items = "+count;
     "<br>"
     }}
 ;
@@ -49,14 +51,7 @@ document.addEventListener("click", (event) => {
 
 document.addEventListener("click",(event2)=>{
     if(event2.target.classList.contains('tick_button')){
-        count=count+1;
-        if(count<0){
-            count === 0
-        }
-        document.getElementById("count").innerHTML= "number of items = "+count;
-        if(count<0){
-            count === 0
-        }
+        
         event2.target.innerHTML = "Added"
         event2.target.disabled = true;
         added1(event2.target.parentNode);
