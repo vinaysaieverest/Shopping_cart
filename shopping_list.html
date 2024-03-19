@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>SHOPING LIST</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class ="container">
+        <h2 id="heading">SHOPPING LIST</h2>
+        <div id = "row">
+            <input id="placeholder1" type="text" placeholder="ENTER " required>
+            <button id="add_button1">ADD</button>
+    
+        </div>
+        <ul id ="list_container">
+        </ul>
+    <p id = "count">no.of items added = 0</p>
+    </div>
+    <script>
+        let count = 0;
+        const addButton = document.getElementById("add_button1");
+        const enterbutton = document.getElementById("placeholder1")
+        enterbutton.addEventListener("keydown",function(event){
+            if(event.key === "Enter"){
+                additem()
+            }})
+    addButton.addEventListener("click", additem)
+    function additem(){
+    let item = document.getElementById("placeholder1").value;
+    if(item !== ""){
+    let listContainer = document.getElementById("list_container");
+    let li = document.createElement("li");
+    li.innerHTML = item + " <button class='delete_button'>X</button>"+ "<button class = 'tick_button'>&#10003</button>";
+    listContainer.appendChild(li);
+    listContainer.style.backgroundColor = "rgb(178, 190, 181)"
+    document.getElementById("placeholder1").value = "";
+    "<br>"
+    }}
+;
+
+document.addEventListener("click", (event) => {
+    if (event.target.classList.contains('delete_button')) {
+        event.target.parentNode.remove();
+        count=count-1
+        document.getElementById("count").innerHTML= "number of items = "+count;
+    }
+});
+
+document.addEventListener("click",(event2)=>{
+    if(event2.target.classList.contains('tick_button')){
+        count=count+1;
+        if(count<0){
+            count === 0
+        }
+        document.getElementById("count").innerHTML= "number of items = "+count;
+        if(count<0){
+            count === 0
+        }
+        event2.target.innerHTML = "Added"
+        event2.target.disabled = true;
+        added1(event2.target.parentNode);
+    }})
+function added1(element){
+    
+    element.style.backgroundColor  = "rgb(175, 225, 175)";
+    element.style.textDecoration = "line-through"
+    
+    
+}
+    </script>
+</body>
+</html>
