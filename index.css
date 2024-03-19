@@ -192,7 +192,7 @@ margin-top: 30px;
     
 }
 .container{
-    height: 500px;
+    height:auto;
     width: 1000px;
     border: solid;
     text-align: center;
@@ -217,11 +217,6 @@ ul li{
 #add_button1:hover{
     cursor: pointer;
 }
-.delete_button{
-
-    margin-left: 50px;
-     justify-content: end;
-}
 .delete_button:hover{
 cursor: pointer;
 }
@@ -232,10 +227,17 @@ cursor: pointer;
 .fruits_delete{
     margin-left: 30px;
 }
-.tick_button{
-    margin-left: 30px;
-}
+
 .tick_button:hover{
     cursor: pointer;
 }
+.delete_button{
+    display: flex;
+    
+    float: right;
 
+}
+.tick_button{
+    display: flex;
+    float: left;
+}

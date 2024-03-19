@@ -16,6 +16,8 @@
         <ul id ="list_container">
         </ul>
     <p id = "count">no.of items added = 0</p>
+    <p id = count1>no.of seleted items = 0</p>
+
     </div>
     <script>
         let count = 0;
@@ -28,6 +30,7 @@
     addButton.addEventListener("click", additem)
     function additem(){
     let item = document.getElementById("placeholder1").value;
+    
     if(item !== ""){
     let listContainer = document.getElementById("list_container");
     let li = document.createElement("li");
@@ -36,7 +39,10 @@
     listContainer.style.backgroundColor = "rgb(178, 190, 181)"
     document.getElementById("placeholder1").value = "";
     count++;
-    document.getElementById("count").innerHTML= "number of items = "+count;
+    document.getElementById("count").innerHTML= "number of items = "+ count;
+    li.style.marginBottom = "10px";
+    li.style.height = "30px"
+    li.style.marginBottom = "10px"
     "<br>"
     }}
 ;
@@ -48,10 +54,11 @@ document.addEventListener("click", (event) => {
         document.getElementById("count").innerHTML= "number of items = "+count;
     }
 });
-
+let count1 = 0;
 document.addEventListener("click",(event2)=>{
     if(event2.target.classList.contains('tick_button')){
-        
+        count1++;
+        document.getElementById("count1").innerHTML="items which were selected"+count1
         event2.target.innerHTML = "Added"
         event2.target.disabled = true;
         added1(event2.target.parentNode);
@@ -59,9 +66,10 @@ document.addEventListener("click",(event2)=>{
 function added1(element){
     
     element.style.backgroundColor  = "rgb(175, 225, 175)";
-    element.style.textDecoration = "line-through"
+    element.style.textDecoration = "line-through";
     
     
+
 }
     </script>
 </body>
