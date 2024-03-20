@@ -60,9 +60,6 @@ document.addEventListener("click", (event) => {
 let count1 = 0;
 document.addEventListener("click",(event2)=>{
     if(event2.target.classList.contains('tick_button')){
-        event2.target,classList.remove('tick_button')
-        event2.target,classList.add('untick_button')
-
         count1++;
         document.getElementById("count1").innerHTML="items which were selected= " + count1;
         event2.target.innerHTML = "Unselect";
