@@ -235,9 +235,16 @@ cursor: pointer;
     display: flex;
     
     float: right;
-
+    height: 30px;
+    background: rgb(215, 64, 64);
+    border: 2px;
 }
 .tick_button{
     display: flex;
     float: left;
+    height: 30px;
+    border: 2px;
+    background-color:aquamarine;
+    
+    
 }
