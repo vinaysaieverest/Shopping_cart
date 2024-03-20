@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <style>
+        body{
+            background: url(rm314-bb-18.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    
+    </style>
     <div class ="container">
         <h2 id="heading">SHOPPING LIST</h2>
         <div id = "row">
@@ -58,21 +67,46 @@ document.addEventListener("click", (event) => {
     }
 });
 let count1 = 0;
-document.addEventListener("click",(event2)=>{
+var button12 = 1;
+if(button12 === 1)
+{
+    document.addEventListener("click",(event2)=>
+    {
+        if(event2.target.classList.contains('tick_button'))
+         {
+            count1++;
+            document.getElementById("count1").innerHTML="items which were selected= " + count1;
+            event2.target.innerHTML = "Unselect";
+            event2.target.disabled = false;
+            event2.target.style.backgroundColor = "coral";
+        
+            added1(event2.target.parentNode);
+            button12 = 2;
+            
+        } 
+    }
+    )
+}
+if(button12 === 2 ){
+    document.addEventListener("click",(event2)=>{
     if(event2.target.classList.contains('tick_button')){
-        count1++;
+        count1--;
         document.getElementById("count1").innerHTML="items which were selected= " + count1;
-        event2.target.innerHTML = "Unselect";
+        event2.target.innerHTML = "&#10003";
         event2.target.disabled = false;
-        event2.target.style.backgroundColor = "coral";
-        added1(event2.target.parentNode);
+        event2.target.style.backgroundColor = "aquamarine";
+        
+        added2(event2.target.parentNode);
     
-}    
+    }
 })
+}
 function added1(element){
     
     element.style.backgroundColor  = "rgb(175, 225, 175)"; //GREENCOLOR
     element.style.textDecoration = "line-through";
+    
+    
 }
 function added2(element){
     element.style.backgroundColor = "rgb(178, 190, 181)";
