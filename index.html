@@ -8,7 +8,7 @@
 <body>
     <style>
         body{
-            background: url(hello.jpg);
+            background: url(rm314-bb-18.jpg);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
@@ -43,7 +43,7 @@
         if(item !== ""){
             let listContainer = document.getElementById("list_container");
             let li = document.createElement("li");
-            li.innerHTML = item + " <button class='delete_button'>X</button>"+ "<button class = 'tick_button'>&#10003</button>"+"<button class = 'unselect_button' >Unselect</button>";
+            li.innerHTML = item + " <button class='delete_button'>X</button>"+ "<button class = 'tick_button'>&#10003</button>";
             listContainer.appendChild(li);
             li.style.backgroundColor = "rgb(178, 190, 181)" //GREYCOLOR
             document.getElementById("placeholder1").value = "";
@@ -53,12 +53,11 @@
             li.style.height = "30px"
             li.style.marginBottom = "10px"
             li.style.border = "1px solid"
-            
 
             "<br>"
         }
     }
-
+;
 
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains('delete_button')) {
@@ -68,39 +67,40 @@ document.addEventListener("click", (event) => {
     }
 });
 let count1 = 0;
-
-
-document.addEventListener("click",(event2)=>
+var button12 = 1;
+if(button12 === 1)
+{
+    document.addEventListener("click",(event2)=>
     {
         if(event2.target.classList.contains('tick_button'))
          {
             count1++;
             document.getElementById("count1").innerHTML="items which were selected= " + count1;
-            event2.target.innerHTML = "&#10003";
+            event2.target.innerHTML = "Unselect";
             event2.target.disabled = false;
             event2.target.style.backgroundColor = "coral";
-            
+        
             added1(event2.target.parentNode);
-            
-            
+            button12 = 2;
             
         } 
     }
     )
-    document.addEventListener("click",(event3)=>
-    {
-        if(event3.target.classList.contains('unselect_button'))
-         {
-            count1--;
-            document.getElementById("count1").innerHTML="items which were selected= " + count1;
-            event3.target.innerHTML = "Unselect";
-            event3.target.disabled = false;
-            added2(event3.target.parentNode);
-        } 
+}
+if(button12 === 2 ){
+    document.addEventListener("click",(event2)=>{
+    if(event2.target.classList.contains('tick_button')){
+        count1--;
+        document.getElementById("count1").innerHTML="items which were selected= " + count1;
+        event2.target.innerHTML = "&#10003";
+        event2.target.disabled = false;
+        event2.target.style.backgroundColor = "aquamarine";
+        
+        added2(event2.target.parentNode);
+    
     }
-    )
-
-
+})
+}
 function added1(element){
     
     element.style.backgroundColor  = "rgb(175, 225, 175)"; //GREENCOLOR
@@ -109,7 +109,7 @@ function added1(element){
     
 }
 function added2(element){
-    element.style.backgroundColor = "rgb(178, 190, 181)"; //GREY COLOR
+    element.style.backgroundColor = "rgb(178, 190, 181)";
     element.style.textDecoration = "none";
 }
     </script>

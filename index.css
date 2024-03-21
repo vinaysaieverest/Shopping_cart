@@ -248,3 +248,13 @@ cursor: pointer;
     
     
 }
+.unselect_button{
+    display: flex;
+    float: left;
+    height: 30px;
+    border: 2px;
+
+}
+.unselect_button:hover{
+    cursor: pointer;
+}
